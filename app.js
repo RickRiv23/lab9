@@ -18,7 +18,7 @@ app.get("/", async function(req, res){
     let categories = await getCategories();
     let authors = await getAuthors();
     
-    res.render("index", {"categories":categories, "authors":authors});
+    res.render("index.ejs", {"categories":categories, "authors":authors});
 }); //root route
 
 app.get("/quotes", async function(req, res){
@@ -72,7 +72,7 @@ function getAuthorInfo(authorId){
            let sql = `SELECT * 
                       FROM q_author
                       WHERE authorId = ${authorId}`;
-            console.log(sql);        
+            
            conn.query(sql, function (err, rows, fields) {
               if (err) throw err;
               //res.send(rows);
@@ -120,9 +120,6 @@ function getQuotes(query){
             params.push(query.category);
             params.push(query.gender);
             params.push(query.authorId);
-            
-            console.log(params);
-            console.log(sql);
             
             conn.query(sql, params, function (err, rows, fields) {
             if (err) throw err;
