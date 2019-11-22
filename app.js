@@ -35,7 +35,7 @@ app.get("/authorInfo", async function(req, res){
     
    let rows = await getAuthorInfo(req.query.authorId);
   //res.render("quotes", {"records":rows});
-    res.send(rows)
+    res.send(rows);
 });//authorInfo
 
 
