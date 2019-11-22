@@ -7,16 +7,8 @@
     "start": "node ./app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/RickRiv23/lab9.git"
-  },
   "author": "",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/RickRiv23/lab9/issues"
-  },
-  "homepage": "https://github.com/RickRiv23/lab9#readme",
   "dependencies": {
     "ejs": "^2.7.1",
     "express": "^4.17.1",
