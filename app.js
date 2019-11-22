@@ -1,7 +1,8 @@
 /* global $*/
 const express = require("express");
 const app = express();
-app.set("view engine", "ejs");
+app.set('view engine', 'html');
+app.engine('html', require('ejs').renderFile);
 app.use(express.static("assets")); //folder for images, css, js
 
 const request = require('request');
@@ -36,12 +37,6 @@ app.get("/authorInfo", async function(req, res){
   //res.render("quotes", {"records":rows});
     res.send(rows)
 });//authorInfo
-
-// app.get();
-
-// app.post("/get", async function(req, res){
-    
-// });
 
 
 
@@ -191,4 +186,4 @@ function getCategories(){
 //starting server
 app.listen(process.env.PORT, process.env.IP, function(){
     console.log("Express server is running...");
-});
+})
