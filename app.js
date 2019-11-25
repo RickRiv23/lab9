@@ -3,7 +3,7 @@ const express = require("express");
 const app = express();
 app.set('view engine', 'html');
 app.engine('html', require('ejs').renderFile);
-app.use(express.static("assets")); //folder for images, css, js
+app.use(express.static("assets"));
 
 const request = require('request');
 const mysql = require('mysql');
@@ -22,8 +22,6 @@ app.get("/", async function(req, res){
 }); //root route
 
 app.get("/quotes", async function(req, res){
-    
-    // let keyword = req.query.searchTerm;
     
     let rows = await getQuotes(req.query);
     
@@ -176,7 +174,6 @@ function getCategories(){
         
         });//connect
     });//promise
-    
 }
 
 
